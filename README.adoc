@@ -1,0 +1,18 @@
+## Ruby + RSpec
+
+Handy links:
+
+1. Ruby:
+  - http://ruby-doc.org/core-2.2.3/Array.html[Array]
+  - http://ruby-doc.org/core-2.2.3/Enumerable.html[Enumerable]
+1. [Better Specs](http://betterspecs.org/).
+1. Dokumentacja http://rspec.info/[RSpec]:
+  - https://github.com/rspec/rspec-core[rspec-core]
+  - https://github.com/rspec/rspec-expectations[rspec-expectations]
+  - https://github.com/rspec/rspec-mocks[rspec-mocks]
+
+## Examples
+
+1. [ ] something to get started
+1. [ ] simple program
+1. [ ] simple library
