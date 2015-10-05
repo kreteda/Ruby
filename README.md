@@ -1,4 +1,4 @@
-## Testowania aplikacji w Ruby
+## Testowanie aplikacji w Ruby
 
 Podręczne linki:
 
