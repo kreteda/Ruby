@@ -4,13 +4,18 @@
 
 
 #przydatne, nowe
-ary = Array.new    #=> []
-Array.new(3)       #=> [nil, nil, nil]
-Array.new(3, true) #=> [true, true, true]
+ary = Array.new   
+#=> []
+Array.new(3)       
+#=> [nil, nil, nil]
+Array.new(3, true) 
+#=> [true, true, true]
 
-Array.new(4) { Hash.new } #=> [{}, {}, {}, {}]
+Array.new(4) { Hash.new } 
+#=> [{}, {}, {}, {}]
 
-Array({:a => "a", :b => "b"}) #=> [[:a, "a"], [:b, "b"]]
+Array({:a => "a", :b => "b"}) 
+#=> [[:a, "a"], [:b, "b"]]
 
 arr = [1, 2, 3, 4, 5, 6]
 arr[2]    #=> 3
