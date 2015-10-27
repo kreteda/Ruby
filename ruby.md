@@ -1,9 +1,9 @@
-## Sciaga
+# Sciaga
 
 #Array
 
 
-#przydatne, nowe
+##przydatne, nowe
 ary = Array.new   
 => []
 Array.new(3)       
@@ -35,12 +35,12 @@ arr.first
 => 1
 arr.last  
 => 6
-#take i drop
+##take i drop
 arr.take(3) 
 => [1, 2, 3]
 arr.drop(3) 
 => [4, 5, 6]
-#include
+##include?##
 browsers.include?('Konqueror') 
 => false
 
@@ -50,11 +50,11 @@ arr.push(5)
 arr << 6    
 => [1, 2, 3, 4, 5, 6]
 
-#unshift will add a new item to the beginning of an array.
+##unshift will add a new item to the beginning of an array.
 arr.unshift(0) 
 => [0, 1, 2, 3, 4, 5, 6]
 
-#insert
+##insert
 arr.insert(3, 'apple')  
 => [0, 1, 2, 'apple', 3, 4, 5, 6]
 #shift
@@ -63,7 +63,7 @@ arr.shift
 arr 
 => [2, 3, 4, 5]
 
-#A useful method if you need to remove nil values from an array is compact:
+##A useful method if you need to remove nil values from an array is compact:
 arr = ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact  
 => ['foo', 0, 'bar', 7, 'baz']
@@ -78,13 +78,13 @@ arr = [1, 2, 3, 4, 5]
 arr.each { |a| print a -= 10, " " }
  prints: -9 -8 -7 -6 -5
 => [1, 2, 3, 4, 5]
-#str
+##str
 words = %w[first second third fourth fifth sixth]
 str = ""
 words.reverse_each { |word| str += "#{word} " }
 p str 
 => "sixth fifth fourth third second first "
-#map
+##map
 arr.map { |a| 2*a }   
 => [2, 4, 6, 8, 10]
 arr                   
@@ -93,7 +93,7 @@ arr.map! { |a| a**2 }
 => [1, 4, 9, 16, 25]
 arr                   
 => [1, 4, 9, 16, 25]
-#przydatne2
+##przydatne2
 Array.[]( 1, 'a', /^A/ ) 
 => [1, "a", /^A/]
 Array[ 1, 'a', /^A/ ]    
@@ -200,13 +200,13 @@ Hash["a" => 100, "b" => 200] #=> {"a"=>100, "b"=>200}
 
 
 
-#wielkosc i typ czcionki
+##wielkosc i typ czcionki
 
 options = { :font_size => 10, :font_family => "Arial" }
 rownowznacznie:
 options = { font_size: 10, font_family: "Arial" }
 
-#wartosc domyslna
+##wartosc domyslna
 
 grades = Hash.new(0)
 
@@ -216,7 +216,7 @@ books[:matz] = "The Ruby Language"
 books[:black] = "The Well-Grounded Rubyist"
 
 
-#parametry
+##parametry
 
 Person.create(name: "John Doe", age: 27)
 
@@ -226,29 +226,29 @@ def self.create(params)
 end
 
 
-#convert
+##convert
 
 Hash.try_convert({1=>2}) #=> {1=>2}
 Hash.try_convert("1=>2") #=> nil
 
 
-#clear
+##clear
 
 h = { "a" => 100, "b" => 200 } #=> {"a"=>100, "b"=>200}
 h.clear #=> {}
 
 
-#petla each
+##petla each
 
 h = { "a" => 100, "b" => 200 }
 h.each {|key, value| puts "#{key} is #{value}" }
 
-#empty?
+##empty?
 
 {}.empty? #=> true
 
 
-#featch
+##featch
 
 h = { "a" => 100, "b" => 200 }
 h.fetch("a") #=> 100
@@ -256,7 +256,7 @@ h.fetch("z", "go fish") #=> "go fish"
 h.fetch("z") { |el| "go fish, #{el}"} #=> "go fish, z"
 
 
-#has
+##has
 
 h = { "a" => 100, "b" => 200 }
 h.has_key?("a") #=> true
@@ -269,46 +269,48 @@ h.has_value?(100) #=> true
 h.has_value?(999) #=> false
 
 
-#to_string/to_s
+##to_string/to_s
 
 h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300 }
 h.to_s #=> "{\"c\"=>300, \"a\"=>100, \"d\"=>400}"
 
 
-#invert
+##invert
 
 h = { "n" => 100, "m" => 100, "y" => 300, "d" => 200, "a" => 0 }
 h.invert #=> {0=>"a", 100=>"m", 200=>"d", 300=>"y"}
 
 
-#lenght
+##lenght
 
 h = { "d" => 100, "a" => 200, "v" => 300, "e" => 400 }
 h.length #=> 4
 
 
-#merage, polaczenie
+##merage, polaczenie
 
 h1 = { "a" => 100, "b" => 200 }
 h2 = { "b" => 254, "c" => 300 }
 h1.merge!(h2) #=> {"a"=>100, "b"=>254, "c"=>300}
 
 
-#SELECT
+##SELECT
 
 h = { "a" => 100, "b" => 200, "c" => 300 }
 h.select {|k,v| k > "a"} #=> {"b" => 200, "c" => 300}
 h.select {|k,v| v < 200} #=> {"a" => 100}
 
 
-#shift, usuwanie
+##shift, usuwanie
 
 h = { 1 => "a", 2 => "b", 3 => "c" }
 h.shift #=> [1, "a"]
 h #=> {2=>"b", 3=>"c"}
 
 
-#to array, to_a
+##to array, to_a
 
 h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300 }
 h.to_a #=> [["c", 300], ["a", 100], ["d", 400]]
+
+#ENUMERABLE
