@@ -188,4 +188,127 @@ a.combination(0).to_a
 => [[]] # one combination of length 0
 a.combination(5).to_a  
 => []   # no combinations of length 5
-  
+
+#HASH
+
+grades = { "Jane Doe" => 10, "Jim Doe" => 6 }
+
+
+Hash["a", 100, "b", 200] #=> {"a"=>100, "b"=>200}
+Hash[ [ ["a", 100], ["b", 200] ] ] #=> {"a"=>100, "b"=>200}
+Hash["a" => 100, "b" => 200] #=> {"a"=>100, "b"=>200}
+
+
+
+#wielkosc i typ czcionki
+
+options = { :font_size => 10, :font_family => "Arial" }
+rownowznacznie:
+options = { font_size: 10, font_family: "Arial" }
+
+#wartosc domyslna
+
+grades = Hash.new(0)
+
+
+books = {}
+books[:matz] = "The Ruby Language"
+books[:black] = "The Well-Grounded Rubyist"
+
+
+#parametry
+
+Person.create(name: "John Doe", age: 27)
+
+def self.create(params)
+@name = params[:name]
+@age = params[:age]
+end
+
+
+#convert
+
+Hash.try_convert({1=>2}) #=> {1=>2}
+Hash.try_convert("1=>2") #=> nil
+
+
+#clear
+
+h = { "a" => 100, "b" => 200 } #=> {"a"=>100, "b"=>200}
+h.clear #=> {}
+
+
+#petla each
+
+h = { "a" => 100, "b" => 200 }
+h.each {|key, value| puts "#{key} is #{value}" }
+
+#empty?
+
+{}.empty? #=> true
+
+
+#featch
+
+h = { "a" => 100, "b" => 200 }
+h.fetch("a") #=> 100
+h.fetch("z", "go fish") #=> "go fish"
+h.fetch("z") { |el| "go fish, #{el}"} #=> "go fish, z"
+
+
+#has
+
+h = { "a" => 100, "b" => 200 }
+h.has_key?("a") #=> true
+h.has_key?("z") #=> false
+
+
+
+h = { "a" => 100, "b" => 200 }
+h.has_value?(100) #=> true
+h.has_value?(999) #=> false
+
+
+#to_string/to_s
+
+h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300 }
+h.to_s #=> "{\"c\"=>300, \"a\"=>100, \"d\"=>400}"
+
+
+#invert
+
+h = { "n" => 100, "m" => 100, "y" => 300, "d" => 200, "a" => 0 }
+h.invert #=> {0=>"a", 100=>"m", 200=>"d", 300=>"y"}
+
+
+#lenght
+
+h = { "d" => 100, "a" => 200, "v" => 300, "e" => 400 }
+h.length #=> 4
+
+
+#merage, polaczenie
+
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+h1.merge!(h2) #=> {"a"=>100, "b"=>254, "c"=>300}
+
+
+#SELECT
+
+h = { "a" => 100, "b" => 200, "c" => 300 }
+h.select {|k,v| k > "a"} #=> {"b" => 200, "c" => 300}
+h.select {|k,v| v < 200} #=> {"a" => 100}
+
+
+#shift, usuwanie
+
+h = { 1 => "a", 2 => "b", 3 => "c" }
+h.shift #=> [1, "a"]
+h #=> {2=>"b", 3=>"c"}
+
+
+#to array, to_a
+
+h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300 }
+h.to_a #=> [["c", 300], ["a", 100], ["d", 400]]
