@@ -17,7 +17,7 @@ Podręczne linki:
 
 ## Zadania
 
-1. [ ] Learn X in Y minutes, where X = [Ruby Array/Enumerable](/)
+1. [x] Learn X in Y minutes, where X = [Ruby Array/Enumerable](/)
 Dokumentacja klas jezyka Ruby:
   - [Hash](ruby.md)
   - [Array](ruby.md)
