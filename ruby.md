@@ -45,4 +45,75 @@ arr          #=> ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact! #=> ['foo', 0, 'bar', 7, 'baz']
 arr          #=> ['foo', 0, 'bar', 7, 'baz']
 
-Iterating over Arrays
+arr = [1, 2, 3, 4, 5]
+arr.each { |a| print a -= 10, " " }
+# prints: -9 -8 -7 -6 -5
+#=> [1, 2, 3, 4, 5]
+
+words = %w[first second third fourth fifth sixth]
+str = ""
+words.reverse_each { |word| str += "#{word} " }
+p str #=> "sixth fifth fourth third second first "
+
+arr.map { |a| 2*a }   #=> [2, 4, 6, 8, 10]
+arr                   #=> [1, 2, 3, 4, 5]
+arr.map! { |a| a**2 } #=> [1, 4, 9, 16, 25]
+arr                   #=> [1, 4, 9, 16, 25]
+
+Array.[]( 1, 'a', /^A/ ) # => [1, "a", /^A/]
+Array[ 1, 'a', /^A/ ]    # => [1, "a", /^A/]
+[ 1, 'a', /^A/ ]         # => [1, "a", /^A/]
+
+[ 1, 1, 3, 5 ] & [ 1, 2, 3 ]                 #=> [ 1, 3 ]
+[ 'a', 'b', 'b', 'z' ] & [ 'a', 'b', 'c' ]   #=> [ 'a', 'b' ]
+
+[ 1, 2, 3 ] * 3    #=> [ 1, 2, 3, 1, 2, 3, 1, 2, 3 ]
+[ 1, 2, 3 ] * ","  #=> "1,2,3"
+
+[ 1, 2 ] << "c" << "d" << [ 3, 4 ]
+#=>  [ 1, 2, "c", "d", [ 3, 4 ] ]
+
+a = [ "a", "b", "c", "d", "e" ]
+a[2] +  a[0] + a[1]    #=> "cab"
+a[6]                   #=> nil
+a[1, 2]                #=> [ "b", "c" ]
+a[1..3]                #=> [ "b", "c", "d" ]
+a[4..7]                #=> [ "e" ]
+a[6..10]               #=> nil
+a[-3, 3]               #=> [ "c", "d", "e" ]
+# special cases
+a[5]                   #=> nil
+a[6, 1]                #=> nil
+a[5, 1]                #=> []
+a[5..10]               #=> []
+
+a = Array.new
+a[4] = "4";                 #=> [nil, nil, nil, nil, "4"]
+a[0, 3] = [ 'a', 'b', 'c' ] #=> ["a", "b", "c", nil, "4"]
+a[1..2] = [ 1, 2 ]          #=> ["a", 1, 2, nil, "4"]
+a[0, 2] = "?"               #=> ["?", 2, nil, "4"]
+a[0..2] = "A"               #=> ["A", "4"]
+a[-1]   = "Z"               #=> ["A", "Z"]
+a[1..-1] = nil              #=> ["A", nil]
+a[1..-1] = []               #=> ["A"]
+a[0, 0] = [ 1, 2 ]          #=> [1, 2, "A"]
+a[3, 0] = "B"               #=> [1, 2, "A", "B"]
+
+a = [ "a", "b", "c", "d", "e" ]
+a.at(0)     #=> "a"
+a.at(-1)    #=> "e"
+
+ary = [0, 4, 7, 10, 12]
+# try to find v such that 4 <= v < 8
+ary.bsearch {|x| 1 - x / 4 } #=> 4 or 7
+# try to find v such that 8 <= v < 10
+ary.bsearch {|x| 4 - x / 2 } #=> nil
+
+a = [1, 2, 3, 4]
+a.combination(1).to_a  #=> [[1],[2],[3],[4]]
+a.combination(2).to_a  #=> [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+a.combination(3).to_a  #=> [[1,2,3],[1,2,4],[1,3,4],[2,3,4]]
+a.combination(4).to_a  #=> [[1,2,3,4]]
+a.combination(0).to_a  #=> [[]] # one combination of length 0
+a.combination(5).to_a  #=> []   # no combinations of length 5
+  
