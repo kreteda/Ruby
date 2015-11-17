@@ -1,4 +1,4 @@
-## Testowanie aplikacji w Ruby, apopko@sigma.ug.edu.pl
+## Testowanie aplikacji w Ruby, rhrycikowski@sigma.ug.edu.pl
 
 ![GIT](images/github_in_case_of_fire.jpg)
 
